@@ -80,3 +80,36 @@ def compute_total_score(
     df = df.sort_values("total_score", ascending=False).reset_index(drop=True)
     df["rank"] = range(1, len(df) + 1)
     return df
+
+from .filters import apply_filters
+
+def rank_genes(
+    df: pd.DataFrame,
+    assay: str,
+    context: dict,
+    weights: dict,
+    filters: dict,
+) -> pd.DataFrame:
+    """
+    Main ranking function.
+
+    Parameters
+    ----------
+    df : DataFrame
+      Input table with at least: gene, effect, pval, optional direction.
+    assay : str
+      "wgbs", "rnaseq", "vcf" (used for future extensions).
+    context : dict
+      {
+        "tissues": ["spinal_cord"],
+        "pathways": ["neurodegeneration"],
+        "traits": ["SMA"],
+      }
+    weights : dict
+      {"expr": 0.4, "pathway": 0.3, "gwas": 0.2, "effect": 0.1}
+    filters : dict
+      {"direction": "hyper", "min_abs_effect": 0.1, "max_pval": 0.05}
+    """
+    df = apply_filters(df, filters)
+    df = compute_total_score(df, weights, context)
+    return df
