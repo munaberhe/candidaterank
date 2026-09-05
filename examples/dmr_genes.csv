@@ -1,0 +1,6 @@
+gene,effect,pval,direction
+SMN1,0.22,1e-6,hyper
+ATP2A1,0.15,3e-4,hyper
+CHCHD10,-0.18,2e-3,hypo
+NEFL,0.10,1e-2,hyper
+SOD1,0.25,5e-5,hyper
