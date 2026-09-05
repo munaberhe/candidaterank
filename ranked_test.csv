@@ -1,0 +1,5 @@
+gene,effect,pval,direction,S_expr,S_pathway,S_gwas,S_effect,total_score,rank
+SMN1,0.22,1e-06,hyper,1.0,1.0,1.0,0.8,0.98,1
+NEFL,0.1,0.01,hyper,0.5,1.0,0.0,0.0,0.5,2
+ATP2A1,0.15,0.0003,hyper,0.25,1.0,0.0,0.33333333333333326,0.43333333333333335,3
+SOD1,0.25,5e-05,hyper,0.0,1.0,0.0,1.0,0.4,4

@@ -31,6 +31,6 @@ def load_gwas_data() -> pd.DataFrame:
     """
     data = {
         "gene": ["SMN1", "SOD1"],
-        "trait": ["SMA"],
+        "trait": ["SMA", "ALS"],
     }
     return pd.DataFrame(data)
