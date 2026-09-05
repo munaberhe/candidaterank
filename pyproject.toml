@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "candidaterank"
+version = "0.1.0"
+description = "Explainable candidate gene prioritization for omics studies"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "pandas",
+  "numpy",
+  "typer",
+  "rich",
+]
+
+[project.scripts]
+candidaterank = "candidaterank.cli:app"
+
+[tool.setuptools.packages.find]
+include = ["candidaterank*"]
